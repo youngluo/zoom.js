@@ -17,7 +17,7 @@ export class ZoomImage {
     }
 
     forceRepaint() {
-        var _ = this.img.offsetWidth; 
+        var _ = this.img.offsetWidth;
         return;
     }
 
@@ -46,19 +46,16 @@ export class ZoomImage {
     }
 
     calculateScale(size) {
-        var maxScaleFactor = size.w / this.img.width;
-
         var viewportWidth = (windowWidth() - this.offset);
         var viewportHeight = (windowHeight() - this.offset);
-        var imageAspectRatio = size.w / size.h;
+
+        var imageAspectRatio = this.img.width / this.img.height;
         var viewportAspectRatio = viewportWidth / viewportHeight;
 
-        if (size.w < viewportWidth && size.h < viewportHeight) {
-            return maxScaleFactor;
-        } else if (imageAspectRatio < viewportAspectRatio) {
-            return (viewportHeight / size.h) * maxScaleFactor;
+        if (imageAspectRatio < viewportAspectRatio) {
+            return viewportHeight / this.img.height;
         } else {
-            return (viewportWidth / size.w) * maxScaleFactor;
+            return viewportWidth / this.img.width;
         }
     }
 
