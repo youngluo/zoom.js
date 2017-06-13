@@ -11,8 +11,11 @@
  * Copyright © 2017 Young Luo.
  */
 
-(function () {
-'use strict';
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.zoom = factory());
+}(this, (function () { 'use strict';
 
 var windowWidth = function windowWidth() {
     return document.documentElement.clientWidth;
@@ -264,11 +267,6 @@ var handleClick = function handleClick() {
 var zoom = Object.create(null);
 zoom.setup = setup;
 
-document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll("img[data-action='zoom']");
-    for (var i = 0; i < elems.length; i++) {
-        zoom.setup(elems[i]);
-    }
-});
+return zoom;
 
-}());
+})));

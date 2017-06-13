@@ -1,19 +1,3 @@
-/**
- * Pure JavaScript implementation of zoom.js.
- * 
- * Bundle of @youngluo/zoom.js
- * Generated: 2017-06-13
- * Version: 1.0.0
- * 
- * This is a fork of the original zoom.js implementation by @Nishanth.
- * 
- * Copyright (c) 2016 Nishanth Shanmugham.
- * Copyright © 2017 Young Luo.
- */
-
-(function () {
-'use strict';
-
 var windowWidth = function windowWidth() {
     return document.documentElement.clientWidth;
 };
@@ -264,11 +248,4 @@ var handleClick = function handleClick() {
 var zoom = Object.create(null);
 zoom.setup = setup;
 
-document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll("img[data-action='zoom']");
-    for (var i = 0; i < elems.length; i++) {
-        zoom.setup(elems[i]);
-    }
-});
-
-}());
+export default zoom;

@@ -1,12 +1,5 @@
 import { elemOffset, once, windowWidth, windowHeight } from "./utils.js";
 
-class Size {
-    constructor(w, h) {
-        this.w = w;
-        this.h = h;
-    }
-}
-
 export class ZoomImage {
     constructor(img, offset) {
         this.img = img;
@@ -22,8 +15,6 @@ export class ZoomImage {
     }
 
     zoom() {
-        var size = new Size(this.img.naturalWidth, this.img.naturalHeight);
-
         this.wrap = document.createElement("div");
         this.wrap.classList.add("zoom-img-wrap");
         this.img.parentNode.insertBefore(this.wrap, this.img);
@@ -37,7 +28,7 @@ export class ZoomImage {
         document.body.appendChild(this.overlay);
 
         this.forceRepaint();
-        var scale = this.calculateScale(size);
+        var scale = this.calculateScale();
 
         this.forceRepaint();
         this.animate(scale);
@@ -45,7 +36,7 @@ export class ZoomImage {
         document.body.classList.add("zoom-overlay-open");
     }
 
-    calculateScale(size) {
+    calculateScale() {
         var viewportWidth = (windowWidth() - this.offset);
         var viewportHeight = (windowHeight() - this.offset);
 

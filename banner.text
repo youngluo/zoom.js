@@ -1,0 +1,10 @@
+Pure JavaScript implementation of zoom.js.
+
+Bundle of <%= pkg.name %>
+Generated: <%= moment().format('YYYY-MM-DD') %>
+Version: <%= pkg.version %>
+
+This is a fork of the original zoom.js implementation by @Nishanth.
+
+Copyright (c) 2016 Nishanth Shanmugham.
+Copyright © 2017 Young Luo.

@@ -1,17 +1,12 @@
 # ZOOM.JS
 
-[![npm (scoped)](https://img.shields.io/npm/v/@nishanths/zoom.js.svg)](https://www.npmjs.com/package/@nishanths/zoom.js)
 
 A pure JavaScript image zooming plugin; as seen on
 [Medium.com](https://medium.com/designing-medium/image-zoom-on-medium-24d146fc0c20). 
 
 Has no jQuery or Bootstrap dependencies.
 
-This is a port of the original version by @fat: <https://github.com/fat/zoom.js>.
-
-## Usage
-
-You can use zoom.js directly as a script, or install via [npm](https://www.npmjs.com/package/@nishanths/zoom.js). 
+This is a port of the original version by @nishanth: <https://github.com/nishanths/zoom.js>.
 
 ### Direct
 
@@ -31,7 +26,7 @@ You can use zoom.js directly as a script, or install via [npm](https://www.npmjs
 
 ### Via npm
 
-1. Install the package: `npm i @nishanths/zoom.js`
+1. Install the package: `npm i @youngluo/zoom.js`
 1. Link the zoom.css file to your application.
 
   ```html
@@ -42,7 +37,7 @@ You can use zoom.js directly as a script, or install via [npm](https://www.npmjs
    make zoomable. 
 
   ```js
-  import { zoom } from "@nishanths/zoom.js";
+  import zoom from "@youngluo/zoom.js";
 
   var imgElem = new Image();
   imgElem.src = "tree.png";
@@ -67,14 +62,3 @@ It has the same behavior and all the features from the original implementation. 
 * Browser compatibility may be lower. Uses the transitionend event without
   vendor prefixes, so IE 10 or higher.
 ```
-
-## License
-
-[Original license](https://raw.githubusercontent.com/fat/zoom.js/master/MIT-LICENSE.txt)
-
-This is a fork of the original zoom.js implementation by @fat.
-Copyrights for the original project are held by @fat. All other copyright
-for changes in the fork are held by Nishanth Shanmugham.
-
-Copyright (c) 2013 @fat
-The MIT License. Copyright © 2016 Nishanth Shanmugham.
